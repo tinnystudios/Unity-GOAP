@@ -34,7 +34,7 @@ namespace GOAP
         {
             if (CurrentAction != null && CurrentAction.Running)
             {
-                if (CurrentAction.Agent.hasPath && CurrentAction.Agent.remainingDistance < 1f)
+                if (CurrentAction.Agent.hasPath && CurrentAction.Agent.remainingDistance < 1f && !_invoked)
                 {
                     Invoke("CompleteAction", CurrentAction.Duration);
                     _invoked = true;

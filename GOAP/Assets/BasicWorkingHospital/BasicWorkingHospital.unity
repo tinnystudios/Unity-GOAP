@@ -423,14 +423,6 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1000317771}
-    - target: {fileID: 381653279, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: Cost
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 381653279, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: PreConditions.Array.data[0].Key
-      value: hasArrived
-      objectReference: {fileID: 0}
     - target: {fileID: 572448664048016225, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
       propertyPath: Target

@@ -32,10 +32,7 @@ namespace GOAP
 
         public void SetState(string key, int value)
         {
-            if (_states.ContainsKey(key))
-                _states[key] = value;
-            else
-                _states.Add(key, value);
+            _states[key] = value;
         }
 
         public Dictionary<string, int> GetStates() => _states;

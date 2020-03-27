@@ -8,13 +8,7 @@ namespace GOAP
     {
         public Queue<Action> Plan(List<Action> actions, Dictionary<string, int> goal, WorldStates states)
         {
-            var usableActions = new List<Action>();
-            foreach (var action in actions)
-            {
-                if(action.IsAchievable())
-                    usableActions.Add(action);
-            }
-
+            var usableActions = actions.Where(x => x.IsAchievable()).ToList();
             var leaves = new List<Node>();
             var start = new Node(null, 0, World.Instance.GetWorldStates().GetStates(), null);
 
@@ -31,9 +25,10 @@ namespace GOAP
             {
                 if (cheapest == null)
                     cheapest = leaf;
-                else if (leaf.Cost < cheapest.Cost)
+                else
                 {
-                    cheapest = leaf;
+                    if (leaf.Cost < cheapest.Cost)
+                        cheapest = leaf;
                 }
             }
 

@@ -1,15 +1,6 @@
 ﻿namespace GOAP
 {
-    public class GoToHospital : Action
+    public class GoToHospital : NavMeshAction
     {
-        public override bool PrePerform()
-        {
-            return true;
-        }
-
-        public override bool PostPerform()
-        {
-            return true;
-        }
     }
 }

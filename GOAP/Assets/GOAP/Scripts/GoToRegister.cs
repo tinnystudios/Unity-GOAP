@@ -1,15 +1,6 @@
 ﻿namespace GOAP
 {
-    public class GoToRegister : Action
+    public class GoToRegister : NavMeshAction
     {
-        public override bool PrePerform()
-        {
-            return true;
-        }
-
-        public override bool PostPerform()
-        {
-            return true;
-        }
     }
 }

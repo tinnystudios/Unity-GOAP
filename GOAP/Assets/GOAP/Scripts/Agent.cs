@@ -21,25 +21,11 @@ namespace GOAP
             Actions = GetComponentsInChildren<Action>().ToList();
         }
 
-        private bool _invoked;
-
-        private void CompleteAction()
-        {
-            CurrentAction.Running = false;
-            CurrentAction.PostPerform();
-            _invoked = false;
-        }
-
         private void LateUpdate()
         {
             if (CurrentAction != null && CurrentAction.Running)
             {
-                if (CurrentAction.Agent.hasPath && CurrentAction.Agent.remainingDistance < 1f && !_invoked)
-                {
-                    Invoke("CompleteAction", CurrentAction.Duration);
-                    _invoked = true;
-                }
-
+                CurrentAction.Run();
                 return;
             }
 
@@ -71,17 +57,7 @@ namespace GOAP
             if (_actionQueue != null && _actionQueue.Count > 0)
             {
                 CurrentAction = _actionQueue.Dequeue();
-                if (CurrentAction.PrePerform())
-                {
-                    // Find Target
-
-                    if (CurrentAction.Target != null)
-                    {
-                        CurrentAction.Running = true;
-                        CurrentAction.Agent.SetDestination(CurrentAction.Target.transform.position);
-                    }
-                }
-                else
+                if (!CurrentAction.PrePerform())
                 {
                     // Force a new plan!
                     _actionQueue = null;

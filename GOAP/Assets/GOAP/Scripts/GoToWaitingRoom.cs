@@ -1,15 +1,6 @@
 ﻿namespace GOAP
 {
-    public class GoToWaitingRoom : Action
+    public class GoToWaitingRoom : NavMeshAction
     {
-        public override bool PrePerform()
-        {
-            return true;
-        }
-
-        public override bool PostPerform()
-        {
-            return true;
-        }
     }
 }

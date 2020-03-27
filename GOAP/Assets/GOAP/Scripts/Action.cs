@@ -44,6 +44,18 @@ namespace GOAP
 
         public abstract bool PrePerform();
         public abstract bool PostPerform();
+
+        public abstract void Run();
+
+        protected bool Completing;
+
+        public void Complete()
+        {
+            Running = false;
+            Completing = false;
+
+            PostPerform();
+        }
     }
 }
 

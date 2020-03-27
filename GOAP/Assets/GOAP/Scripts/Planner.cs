@@ -10,7 +10,7 @@ namespace GOAP
         {
             var usableActions = actions.Where(x => x.IsAchievable()).ToList();
             var leaves = new List<Node>();
-            var start = new Node(null, 0, World.Instance.GetWorldStates().GetStates(), null);
+            var start = new Node(null, 0, World.Instance.GetWorldStates().GetStates(), states.GetStates(),null);
 
             var success = BuildGraph(start, leaves, usableActions, goal);
 

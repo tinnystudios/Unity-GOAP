@@ -9,6 +9,8 @@ namespace GOAP
         public List<Action> Actions = new List<Action>();
         public Dictionary<SubGoal, int> Goals = new Dictionary<SubGoal, int>();
 
+        public WorldStates States;
+
         // Planner
         public Action CurrentAction;
         public SubGoal CurrentGoal;
@@ -37,7 +39,7 @@ namespace GOAP
 
                 foreach (var goal in sortedGoals)
                 {
-                    _actionQueue = _planner.Plan(Actions, goal.Key.SubGoals, null);
+                    _actionQueue = _planner.Plan(Actions, goal.Key.SubGoals, States);
                     if (_actionQueue == null) 
                         continue;
 

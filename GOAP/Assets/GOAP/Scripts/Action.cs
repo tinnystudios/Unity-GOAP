@@ -24,6 +24,9 @@ namespace GOAP
         private Dictionary<string, int> _preconditions = new Dictionary<string, int>();
         private Dictionary<string, int> _afterEffects = new Dictionary<string, int>();
 
+        public Dictionary<string, int> PreconditionsMap => _preconditions;
+        public Dictionary<string, int> AfterEffectsMap => _afterEffects;
+
         public bool Running { get; set; }
 
         private void Awake()

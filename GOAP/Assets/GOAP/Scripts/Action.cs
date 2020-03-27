@@ -39,7 +39,7 @@ namespace GOAP
 
         public bool IsAchievableGiven(Dictionary<string, int> preConditions)
         {
-            return _preconditions.All(preCondition => _preconditions.ContainsKey(preCondition.Key));
+            return _preconditions.All(preCondition => preConditions.ContainsKey(preCondition.Key));
         }
 
         public abstract bool PrePerform();

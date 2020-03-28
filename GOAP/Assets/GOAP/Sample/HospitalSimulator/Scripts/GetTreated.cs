@@ -25,6 +25,7 @@ namespace GOAP
         public override bool PostPerform()
         {
             World.Instance.GetWorldStates().ModifyState("Treated", 1);
+            States.ModifyState("isCured", 1);
             Inventory.Remove(Cubicle);
             return true;
         }

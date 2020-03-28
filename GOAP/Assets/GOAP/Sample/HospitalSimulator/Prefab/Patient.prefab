@@ -165,16 +165,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Get Treated
   Target: {fileID: 0}
-  Agent: {fileID: 381653278}
   Cost: 1
-  Duration: 0
+  Duration: 8
   PreConditions:
   - Key: atHospital
     Value: 1
   AfterEffects:
-  - Key: isTreated
+  - Key: isCured
     Value: 0
+  Agent: {fileID: 381653278}
   Cubicle: {fileID: 0}
+--- !u!1 &723370521314315961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8458857870616937043}
+  - component: {fileID: 2544579930960841443}
+  m_Layer: 0
+  m_Name: GoHome
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8458857870616937043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723370521314315961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8578378019575434002}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2544579930960841443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723370521314315961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec99fc2d68dc8d49bfebde7277d9a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Go Home
+  Target: {fileID: 0}
+  Cost: 1
+  Duration: 0
+  PreConditions:
+  - Key: isCured
+    Value: 1
+  AfterEffects:
+  - Key: isHome
+    Value: 0
+  Agent: {fileID: 381653278}
 --- !u!1 &1043473021641349509
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +936,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Go to Register
   Target: {fileID: 0}
-  Agent: {fileID: 381653278}
   Cost: 1
   Duration: 1
   PreConditions:
@@ -891,6 +944,7 @@ MonoBehaviour:
   AfterEffects:
   - Key: hasRegistered
     Value: 0
+  Agent: {fileID: 381653278}
 --- !u!1 &3876965400268196659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,13 +2614,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Go to Hospital
   Target: {fileID: 0}
-  Agent: {fileID: 381653278}
   Cost: 1
   Duration: 0
   PreConditions: []
   AfterEffects:
   - Key: hasArrived
     Value: 1
+  Agent: {fileID: 381653278}
 --- !u!1 &7354926521626148123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,9 +2817,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7880970886039044016}
-  - component: {fileID: 381653278}
   - component: {fileID: 6255805466409445477}
   - component: {fileID: 3378302368324849334}
+  - component: {fileID: 381653278}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -2789,28 +2843,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &381653278
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7881807149238628900}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &6255805466409445477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,6 +2870,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 6255805466409445477}
+--- !u!195 &381653278
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7927236269272520591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,7 +3110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Go to waiting room
   Target: {fileID: 0}
-  Agent: {fileID: 381653278}
   Cost: 1
   Duration: 0
   PreConditions:
@@ -3065,6 +3118,7 @@ MonoBehaviour:
   AfterEffects:
   - Key: isWaiting
     Value: 0
+  Agent: {fileID: 381653278}
 --- !u!1 &8956169348273950565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,6 +3150,7 @@ Transform:
   - {fileID: 264015706481588397}
   - {fileID: 4344150393155898797}
   - {fileID: 9070781084690089011}
+  - {fileID: 8458857870616937043}
   m_Father: {fileID: 7880970886039044016}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

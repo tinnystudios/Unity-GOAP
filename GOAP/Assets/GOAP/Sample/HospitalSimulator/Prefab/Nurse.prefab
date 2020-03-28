@@ -134,7 +134,7 @@ MonoBehaviour:
   Name: GoToCubicle
   Target: {fileID: 0}
   Cost: 1
-  Duration: 0
+  Duration: 10
   PreConditions:
   - Key: patientPickUp
     Value: 1
@@ -1137,8 +1137,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 177407082141715887}
-  - component: {fileID: 1561880132}
   - component: {fileID: 1561880133}
+  - component: {fileID: 6584289342251669335}
+  - component: {fileID: 1561880132}
   m_Layer: 0
   m_Name: Nurse
   m_TagString: Untagged
@@ -1162,6 +1163,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1561880133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618188073631541129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cf82ce1ff017142a40beb1f3462aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Actions: []
+  CurrentAction: {fileID: 0}
+--- !u!114 &6584289342251669335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618188073631541129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8f1d24f7ddfdd45955fd26b9832720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Agent: {fileID: 1561880133}
 --- !u!195 &1561880132
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1184,20 +1212,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1561880133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2618188073631541129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5cf82ce1ff017142a40beb1f3462aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Actions: []
-  CurrentAction: {fileID: 0}
 --- !u!1 &2629889911763255196
 GameObject:
   m_ObjectHideFlags: 0

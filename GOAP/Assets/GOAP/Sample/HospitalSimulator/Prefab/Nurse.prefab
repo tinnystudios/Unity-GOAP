@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1911268863}
+  - {fileID: 1700352525359025133}
   m_Father: {fileID: 177407082141715887}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Get Patient
   Target: {fileID: 0}
-  Agent: {fileID: 1561880132}
   Cost: 1
   Duration: 2
   PreConditions:
@@ -85,8 +85,64 @@ MonoBehaviour:
   - Key: hasPatient
     Value: 1
   AfterEffects:
+  - Key: patientPickUp
+    Value: 0
+  Agent: {fileID: 1561880132}
+--- !u!1 &410424791320752032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700352525359025133}
+  - component: {fileID: 5817350586601656719}
+  m_Layer: 0
+  m_Name: GoToCubicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700352525359025133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410424791320752032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1588019801}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5817350586601656719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410424791320752032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fdec623ff427049bf08119848a9a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GoToCubicle
+  Target: {fileID: 0}
+  Cost: 1
+  Duration: 0
+  PreConditions:
+  - Key: patientPickUp
+    Value: 1
+  AfterEffects:
   - Key: treatPatient
     Value: 0
+  Agent: {fileID: 1561880132}
+  Cubicle: {fileID: 0}
 --- !u!1 &474095811608573089
 GameObject:
   m_ObjectHideFlags: 0

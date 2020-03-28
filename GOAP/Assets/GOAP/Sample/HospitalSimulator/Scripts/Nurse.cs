@@ -7,6 +7,7 @@
             base.Start();
 
             var s1 = new SubGoal("treatPatient", 1, true);
+
             var priority = 3;
             Goals.Add(s1, priority);
         }

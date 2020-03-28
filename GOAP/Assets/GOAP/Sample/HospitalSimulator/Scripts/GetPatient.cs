@@ -28,6 +28,8 @@ namespace GOAP
             CubicleManager.Inventory.Transfer(top, targetAgent.Inventory);
             Cubicle = top;
 
+            Inventory.Add(Cubicle);
+
             return true;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Games.Core;
 using UnityEngine.AI;
 
 namespace GOAP
@@ -12,7 +13,6 @@ namespace GOAP
         public string Name = "Action";
 
         public GameObject Target;
-        public NavMeshAgent Agent;
 
         [Tooltip("How much does the agent dislike doing this action?")]
         public float Cost = 1.0f;
@@ -28,6 +28,8 @@ namespace GOAP
         public Dictionary<string, int> PreconditionsMap => _preconditions;
         public Dictionary<string, int> AfterEffectsMap => _afterEffects;
 
+        public IInventory Inventory { get; private set; }
+
         public bool Running { get; set; }
 
         private void Awake()
@@ -37,6 +39,9 @@ namespace GOAP
 
             foreach (var condition in AfterEffects)
                 _afterEffects.Add(condition.Key, condition.Value);
+
+            Inventory = GetComponentInParent<Agent>().Inventory;
+            States = GetComponentInParent<Agent>().States;
         }
 
         public bool IsAchievable() => true;

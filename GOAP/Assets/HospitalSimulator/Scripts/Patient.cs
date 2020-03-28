@@ -6,9 +6,11 @@
         {
             base.Start();
 
-            var s1 = new SubGoal("isWaiting", 1, true);
-            var priority = 3;
-            Goals.Add(s1, priority);
+            var waitingGoal = new SubGoal("isWaiting", 1, true);
+            var treatGoal = new SubGoal("isTreated", 1, true);
+
+            Goals.Add(waitingGoal, 3);
+            Goals.Add(treatGoal, 5);
         }
     }
 }

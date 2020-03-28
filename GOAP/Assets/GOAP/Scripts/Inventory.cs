@@ -1,4 +1,6 @@
-﻿namespace Games.Core
+﻿using System.Linq;
+
+namespace Games.Core
 {
     using System.Collections.Generic;
 
@@ -23,6 +25,11 @@
             Remove(item);
             inventory.Add(item);
         }
+
+        public List<T> GetListOfType<T>()
+        {
+            return Items.OfType<T>().ToList();
+        }
     }
 
     public interface IInventory
@@ -32,6 +39,7 @@
         void Remove(IItem item);
         void Transfer(IItem item, IInventory inventory);
         bool Empty { get; }
+        List<T> GetListOfType<T>();
     }
 
     public interface IItem

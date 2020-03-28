@@ -13,11 +13,6 @@ namespace GOAP
                 return false;
 
             Target = PatientManager.Get();
-            var agent = Target.GetComponent<Agent>();
-
-            var top = CubicleManager.Inventory.Items[0];
-            CubicleManager.Inventory.Transfer(top, agent.Inventory);
-            Cubicle = top;
 
             World.Instance.GetWorldStates().ModifyState("FreeCubicle", -1);
             return base.PrePerform();
@@ -26,8 +21,12 @@ namespace GOAP
         public override bool PostPerform()
         {
             World.Instance.GetWorldStates().ModifyState("hasPatient", -1);
-            var agent = Target.GetComponent<Agent>();
-            agent.Inventory.Add(Cubicle);
+
+            var targetAgent = Target.GetComponent<Agent>();
+
+            var top = CubicleManager.Inventory.Items[0];
+            CubicleManager.Inventory.Transfer(top, targetAgent.Inventory);
+            Cubicle = top;
 
             return true;
         }

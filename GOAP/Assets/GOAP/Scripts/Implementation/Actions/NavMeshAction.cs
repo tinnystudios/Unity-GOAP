@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace GOAP
 {
     public class NavMeshAction : Action
     {
+        public NavMeshAgent Agent;
+
+        public void OnValidate()
+        {
+            Agent = Agent ?? GetComponentInParent<NavMeshAgent>();
+        }
+
         public override bool PrePerform()
         {
             if (Target != null)

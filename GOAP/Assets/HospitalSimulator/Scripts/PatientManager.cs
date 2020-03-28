@@ -1,4 +1,5 @@
 ﻿using Boo.Lang;
+using Games.Core;
 using UnityEngine;
 
 namespace GOAP
@@ -12,6 +13,11 @@ namespace GOAP
             Patients.Add(go);
         }
 
+        public static void Remove(GameObject go)
+        {
+            Patients.Remove(go);
+        }
+
         public static GameObject Get()
         {
             if (Patients.Count == 0)
@@ -23,5 +29,10 @@ namespace GOAP
 
             return patient;
         }
+    }
+
+    public static class CubicleManager
+    {
+        public static IInventory Inventory = new Inventory();
     }
 }

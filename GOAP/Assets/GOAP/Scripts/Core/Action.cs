@@ -20,8 +20,7 @@ namespace GOAP
 
         public WorldState[] PreConditions;
         public WorldState[] AfterEffects;
-        // Agent WorldStates
-        
+        public WorldStates States;
 
         private Dictionary<string, int> _preconditions = new Dictionary<string, int>();
         private Dictionary<string, int> _afterEffects = new Dictionary<string, int>();

@@ -80,6 +80,8 @@ MonoBehaviour:
   Cost: 1
   Duration: 2
   PreConditions:
+  - Key: freeCubicle
+    Value: 1
   - Key: hasPatient
     Value: 1
   AfterEffects:

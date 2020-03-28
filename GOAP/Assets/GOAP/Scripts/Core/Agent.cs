@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Games.Core;
 using UnityEngine;
 
 namespace GOAP
@@ -9,7 +10,7 @@ namespace GOAP
         public List<Action> Actions = new List<Action>();
         public Dictionary<SubGoal, int> Goals = new Dictionary<SubGoal, int>();
 
-        public WorldStates States;
+        public WorldStates States = new WorldStates();
 
         // Planner
         public Action CurrentAction;
@@ -17,6 +18,8 @@ namespace GOAP
 
         private Queue<Action> _actionQueue;
         private Planner _planner;
+
+        public IInventory Inventory = new Inventory();
 
         public virtual void Start()
         {

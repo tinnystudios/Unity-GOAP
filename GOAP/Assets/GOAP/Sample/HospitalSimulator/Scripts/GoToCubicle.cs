@@ -27,7 +27,7 @@ namespace GOAP
 
             // This is the nurse 'treating' the patient
             CubicleManager.Inventory.Add(Cubicle);
-            World.Instance.GetWorldStates().ModifyState("FreeCubicle", 1);
+            World.Instance.GetWorldStates().ModifyState("freeCubicle", 1);
 
             return base.PostPerform();
         }

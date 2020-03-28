@@ -32,7 +32,8 @@ namespace GOAP
 
         public override void Run()
         {
-            if (!Agent.hasPath || !(Agent.remainingDistance < 1f) || Completing) 
+            var dist = Vector3.Distance(Agent.transform.position, Target.transform.position);
+            if (dist >= 2 || Completing) 
                 return;
 
             StartCoroutine(Routine());

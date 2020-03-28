@@ -134,7 +134,7 @@ MonoBehaviour:
   Name: GoToCubicle
   Target: {fileID: 0}
   Cost: 1
-  Duration: 10
+  Duration: 5
   PreConditions:
   - Key: patientPickUp
     Value: 1

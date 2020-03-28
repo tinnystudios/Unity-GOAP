@@ -13,5 +13,18 @@ namespace GOAP
                 World.Instance.GetWorldStates().ModifyState("freeCubicle", 1);
             }
         }
+
+        void OnGUI()
+        {
+            GUILayout.BeginVertical("Box");
+            {
+                GUILayout.Label("World States");
+                var states = World.Instance.GetWorldStates().GetStates();
+                foreach (var state in states)
+                {
+                    GUILayout.Label($"{state.Key}: {state.Value}");
+                }
+            }
+        }
     }
 }

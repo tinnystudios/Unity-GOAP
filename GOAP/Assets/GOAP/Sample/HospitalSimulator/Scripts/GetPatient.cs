@@ -14,8 +14,12 @@ namespace GOAP
 
             Target = PatientManager.Get();
 
-            World.Instance.GetWorldStates().ModifyState("FreeCubicle", -1);
-            return base.PrePerform();
+            var can = base.PrePerform();
+
+            if(can)
+                World.Instance.GetWorldStates().ModifyState("freeCubicle", -1);
+            
+            return can;
         }
 
         public override bool PostPerform()

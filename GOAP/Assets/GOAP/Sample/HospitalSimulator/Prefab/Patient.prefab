@@ -168,10 +168,10 @@ MonoBehaviour:
   Cost: 1
   Duration: 8
   PreConditions:
-  - Key: atHospital
+  - KeyReference: {fileID: 11400000, guid: cdb6f9023b151a345ab29970cc83dc9c, type: 2}
     Value: 1
   AfterEffects:
-  - Key: isCured
+  - KeyReference: {fileID: 11400000, guid: d3a897d10d23a994da21de0d18e73ea5, type: 2}
     Value: 0
   Agent: {fileID: 381653278}
   Cubicle: {fileID: 0}
@@ -223,10 +223,10 @@ MonoBehaviour:
   Cost: 1
   Duration: 0
   PreConditions:
-  - Key: isCured
+  - KeyReference: {fileID: 11400000, guid: d3a897d10d23a994da21de0d18e73ea5, type: 2}
     Value: 1
   AfterEffects:
-  - Key: isHome
+  - KeyReference: {fileID: 11400000, guid: fc728a203a55fb64286aa7161a1f0934, type: 2}
     Value: 0
   Agent: {fileID: 381653278}
 --- !u!1 &1043473021641349509
@@ -939,10 +939,10 @@ MonoBehaviour:
   Cost: 1
   Duration: 1
   PreConditions:
-  - Key: hasArrived
+  - KeyReference: {fileID: 11400000, guid: f691ad82d646d164dbd4a44879c5c956, type: 2}
     Value: 1
   AfterEffects:
-  - Key: hasRegistered
+  - KeyReference: {fileID: 11400000, guid: b7c4577fb29fbde4c8cce5fd96e9a78f, type: 2}
     Value: 0
   Agent: {fileID: 381653278}
 --- !u!1 &3876965400268196659
@@ -2618,7 +2618,7 @@ MonoBehaviour:
   Duration: 0
   PreConditions: []
   AfterEffects:
-  - Key: hasArrived
+  - KeyReference: {fileID: 11400000, guid: f691ad82d646d164dbd4a44879c5c956, type: 2}
     Value: 1
   Agent: {fileID: 381653278}
 --- !u!1 &7354926521626148123
@@ -2859,17 +2859,21 @@ MonoBehaviour:
   SubGoals:
   - Name: {fileID: 11400000, guid: f0081880f74d9bb4cbc1a2423750ffa2, type: 2}
     Priority: 3
+    Target: 0
     Once: 1
   - Name: {fileID: 11400000, guid: 746d95a389ac76e43959e82702e7808c, type: 2}
     Priority: 5
+    Target: 0
     Once: 1
   - Name: {fileID: 11400000, guid: 36ff67180b713ed46a426fc638b0ce62, type: 2}
     Priority: 3
+    Target: 0
     Once: 1
   CurrentAction: {fileID: 0}
   CurrentGoal:
     Name: {fileID: 0}
     Priority: 0
+    Target: 0
     Once: 0
 --- !u!114 &3378302368324849334
 MonoBehaviour:
@@ -3127,10 +3131,10 @@ MonoBehaviour:
   Cost: 1
   Duration: 0
   PreConditions:
-  - Key: hasRegistered
+  - KeyReference: {fileID: 11400000, guid: b7c4577fb29fbde4c8cce5fd96e9a78f, type: 2}
     Value: 0
   AfterEffects:
-  - Key: isWaiting
+  - KeyReference: {fileID: 11400000, guid: 16f9888389253f340b0b99095d71984d, type: 2}
     Value: 0
   Agent: {fileID: 381653278}
 --- !u!1 &8956169348273950565

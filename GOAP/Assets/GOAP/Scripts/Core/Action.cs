@@ -44,7 +44,7 @@ namespace GOAP
             States = GetComponentInParent<Agent>().States;
         }
 
-        public bool IsAchievable() => true;
+        public virtual bool IsAchievable() => true;
 
         public bool IsAchievableGiven(Dictionary<string, int> preConditions)
         {

@@ -5,5 +5,6 @@ namespace GOAP
 {
     public class Cubicle : MonoBehaviour, IItem
     {
+        public Transform Destination;
     }
 }

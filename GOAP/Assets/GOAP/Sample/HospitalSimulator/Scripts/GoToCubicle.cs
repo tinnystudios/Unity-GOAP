@@ -1,6 +1,4 @@
-﻿using Games.Core;
-
-namespace GOAP
+﻿namespace GOAP
 {
     public class GoToCubicle : NavMeshAction
     {
@@ -13,7 +11,7 @@ namespace GOAP
                 return false;
 
             Cubicle = cubicles[0];
-            Target = Cubicle.gameObject;
+            Target = Cubicle.Destination.gameObject;
 
             return base.PrePerform();
         }

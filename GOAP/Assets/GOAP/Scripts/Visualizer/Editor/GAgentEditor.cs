@@ -34,6 +34,14 @@ public class GAgentVisualEditor : Editor
             foreach (KeyValuePair<string, int> sg in g.Key.SubGoals)
                 GUILayout.Label("=====  " + sg.Key);
         }
+
+        GUILayout.Label("Agent States: ");
+        var agentStates = agent.Agent.States.GetStates();
+        foreach (var agentState in agentStates)
+        {
+            GUILayout.Label($"{agentState.Key}: {agentState.Value}");
+        }
+
         serializedObject.ApplyModifiedProperties();
     }
 }

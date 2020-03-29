@@ -17,13 +17,15 @@ namespace GOAP
             Cubicle = cubicles[0];
             Inventory.Remove(Cubicle);
 
-            Target = Cubicle.gameObject;
+            Target = Cubicle.Destination.gameObject;
 
             return base.PrePerform();
         }
 
         public override bool PostPerform()
         {
+            Target = null;
+
             World.Instance.GetWorldStates().ModifyState("Treated", 1);
             States.ModifyState("isCured", 1);
             Inventory.Remove(Cubicle);

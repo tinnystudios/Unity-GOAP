@@ -81,12 +81,15 @@ MonoBehaviour:
   Cost: 1
   Duration: 2
   PreConditions:
-  - Key: freeCubicle
+  - KeyReference: {fileID: 11400000, guid: c8557a5c68d124743a1c008eb9c1d2ba, type: 2}
+    Key: freeCubicle
     Value: 1
-  - Key: hasPatient
+  - KeyReference: {fileID: 11400000, guid: 5f8edfffcfc2ff04a800548fc48896e5, type: 2}
+    Key: hasPatient
     Value: 1
   AfterEffects:
-  - Key: patientPickUp
+  - KeyReference: {fileID: 11400000, guid: 6634808530b4f09438451e762842b1de, type: 2}
+    Key: patientPickUp
     Value: 0
   Agent: {fileID: 1561880132}
 --- !u!1 &410424791320752032
@@ -137,10 +140,12 @@ MonoBehaviour:
   Cost: 1
   Duration: 5
   PreConditions:
-  - Key: patientPickUp
+  - KeyReference: {fileID: 11400000, guid: 6634808530b4f09438451e762842b1de, type: 2}
+    Key: patientPickUp
     Value: 1
   AfterEffects:
-  - Key: treatPatient
+  - KeyReference: {fileID: 11400000, guid: 7f04aed51ded0f341b023eba0973dc01, type: 2}
+    Key: treatPatient
     Value: 0
   Agent: {fileID: 1561880132}
   Cubicle: {fileID: 0}
@@ -1180,14 +1185,17 @@ MonoBehaviour:
   SubGoals:
   - Name: {fileID: 11400000, guid: 208e5bd91e5d0074f8f738ca999f4f60, type: 2}
     Priority: 5
+    Target: 0
     Once: 0
   - Name: {fileID: 11400000, guid: 47d9cd7bf8c448844996f06596141239, type: 2}
     Priority: 3
+    Target: 0
     Once: 0
   CurrentAction: {fileID: 0}
   CurrentGoal:
     Name: {fileID: 0}
     Priority: 0
+    Target: 0
     Once: 0
 --- !u!114 &6584289342251669335
 MonoBehaviour:
@@ -1815,10 +1823,12 @@ MonoBehaviour:
   Cost: 1
   Duration: 5
   PreConditions:
-  - Key: exhausted
+  - KeyReference: {fileID: 11400000, guid: 7b496e705374e3f43b8ee678c233affe, type: 2}
+    Key: exhausted
     Value: 1
   AfterEffects:
-  - Key: isRested
+  - KeyReference: {fileID: 11400000, guid: 47d9cd7bf8c448844996f06596141239, type: 2}
+    Key: isRested
     Value: 0
   Agent: {fileID: 1561880132}
 --- !u!1 &7028101963732294443

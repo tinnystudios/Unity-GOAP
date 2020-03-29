@@ -374,6 +374,11 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1184113935}
+    - target: {fileID: 6255805466409445477, guid: d36c43225f9391e4c8810c98eb7ef85e,
+        type: 3}
+      propertyPath: SubGoals.Array.data[0].Once
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7222012743296767280, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
       propertyPath: Target
@@ -1209,7 +1214,7 @@ PrefabInstance:
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.1
+      value: -232.4
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
@@ -2953,7 +2958,7 @@ PrefabInstance:
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.5
+      value: -103.2
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
@@ -4427,7 +4432,7 @@ PrefabInstance:
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.3
+      value: -80.6
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e,
         type: 3}

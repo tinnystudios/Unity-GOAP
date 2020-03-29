@@ -5,7 +5,8 @@ namespace GOAP
     [Serializable]
     public class WorldState
     {
-        public string Key;
+        public StringReference KeyReference;
+        public string Key => KeyReference.Value;
         public int Value;
     }
 }

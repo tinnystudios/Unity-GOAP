@@ -50,6 +50,12 @@ namespace GOAP
         {
             foreach (var agentPreCondition in PreConditions)
             {
+                if (agentPreCondition.Operator == EOperator.DoesNotContain)
+                {
+                    if (preConditions.ContainsKey(agentPreCondition.Key))
+                        return false;
+                }
+
                 if (!preConditions.ContainsKey(agentPreCondition.Key))
                     return false;
 
@@ -68,6 +74,12 @@ namespace GOAP
 
                     case EOperator.GreaterThan:
                         if (agentPreCondition.Value > preConditions[agentPreCondition.Key])
+                            return false;
+
+                        break;
+
+                    case EOperator.Equals:
+                        if (agentPreCondition.Value != preConditions[agentPreCondition.Key])
                             return false;
 
                         break;
@@ -93,4 +105,3 @@ namespace GOAP
         }
     }
 }
-

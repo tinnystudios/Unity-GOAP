@@ -17,6 +17,7 @@ namespace GOAP
         Contains,
         Equals,
         LessThan,
-        GreaterThan
+        GreaterThan,
+        DoesNotContain
     }
 }

@@ -1,15 +1,19 @@
-﻿namespace GOAP
+﻿using Random = UnityEngine.Random;
+
+namespace GOAP
 {
     public class Nurse : Agent
     {
         public override void Start()
         {
             base.Start();
+            Invoke("GetTired", Random.Range(5,20));
+        }
 
-            var s1 = new SubGoal("treatPatient", 1, false);
-
-            var priority = 3;
-            Goals.Add(s1, priority);
+        private void GetTired()
+        {
+            States.ModifyState("exhausted", 1);
+            Invoke("GetTired", Random.Range(5, 20));
         }
     }
 }

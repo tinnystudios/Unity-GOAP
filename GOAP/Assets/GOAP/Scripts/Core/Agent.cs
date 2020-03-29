@@ -8,6 +8,8 @@ namespace GOAP
     public class Agent : MonoBehaviour
     {
         public List<Action> Actions = new List<Action>();
+
+        public List<SubGoal> SubGoals;
         public Dictionary<SubGoal, int> Goals = new Dictionary<SubGoal, int>();
 
         public WorldStates States = new WorldStates();
@@ -24,6 +26,12 @@ namespace GOAP
         public virtual void Start()
         {
             Actions = GetComponentsInChildren<Action>().ToList();
+
+            foreach (var subGoal in SubGoals)
+            {
+                subGoal.Initialize();
+                Goals.Add(subGoal, subGoal.Priority);
+            }
         }
 
         private void LateUpdate()

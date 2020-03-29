@@ -2856,7 +2856,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Actions: []
+  SubGoals:
+  - Name: {fileID: 11400000, guid: f0081880f74d9bb4cbc1a2423750ffa2, type: 2}
+    Priority: 3
+    Once: 1
+  - Name: {fileID: 11400000, guid: 746d95a389ac76e43959e82702e7808c, type: 2}
+    Priority: 5
+    Once: 1
+  - Name: {fileID: 11400000, guid: 36ff67180b713ed46a426fc638b0ce62, type: 2}
+    Priority: 3
+    Once: 1
   CurrentAction: {fileID: 0}
+  CurrentGoal:
+    Name: {fileID: 0}
+    Priority: 0
+    Once: 0
 --- !u!114 &3378302368324849334
 MonoBehaviour:
   m_ObjectHideFlags: 0

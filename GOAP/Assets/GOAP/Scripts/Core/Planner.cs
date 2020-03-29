@@ -104,6 +104,7 @@ namespace GOAP
         {
             foreach (var goal in goals)
             {
+                // #TODO Add Goal Values
                 if (!state.ContainsKey(goal.Key))
                     return false;
             }

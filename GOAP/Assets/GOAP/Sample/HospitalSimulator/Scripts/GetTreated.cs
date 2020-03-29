@@ -5,6 +5,9 @@ namespace GOAP
 {
     public class GetTreated : NavMeshAction
     {
+        public StringReference IsCured;
+        public StringReference Treated;
+
         public Cubicle Cubicle;
 
         public override bool PrePerform()
@@ -26,8 +29,8 @@ namespace GOAP
         {
             Target = null;
 
-            World.Instance.GetWorldStates().ModifyState("Treated", 1);
-            States.ModifyState("isCured", 1);
+            World.Instance.GetWorldStates().ModifyState(Treated.Value, 1);
+            States.ModifyState(IsCured.Value, 1);
             Inventory.Remove(Cubicle);
             return true;
         }

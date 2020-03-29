@@ -5,6 +5,9 @@ namespace GOAP
 {
     public class GetPatient : NavMeshAction
     {
+        public StringReference FreeCubicle;
+        public StringReference HasPatient;
+
         public IItem Cubicle;
 
         public override bool PrePerform()
@@ -17,14 +20,14 @@ namespace GOAP
             var can = base.PrePerform();
 
             if(can)
-                World.Instance.GetWorldStates().ModifyState("freeCubicle", -1);
+                World.Instance.GetWorldStates().ModifyState(FreeCubicle.Value, -1);
             
             return can;
         }
 
         public override bool PostPerform()
         {
-            World.Instance.GetWorldStates().ModifyState("hasPatient", -1);
+            World.Instance.GetWorldStates().ModifyState(HasPatient.Value, -1);
 
             var targetAgent = Target.GetComponent<Agent>();
 

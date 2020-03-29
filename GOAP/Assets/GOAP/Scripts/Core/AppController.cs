@@ -4,13 +4,15 @@ namespace GOAP
 {
     public class AppController : MonoBehaviour
     {
+        public StringReference FreeCubicle;
+
         private void Start()
         {
             var cubicles = FindObjectsOfType<Cubicle>();
             foreach (var cubicle in cubicles)
             {
                 CubicleManager.Inventory.Add(cubicle);
-                World.Instance.GetWorldStates().ModifyState("freeCubicle", 1);
+                World.Instance.GetWorldStates().ModifyState(FreeCubicle.Value, 1);
             }
         }
 

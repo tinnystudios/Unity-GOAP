@@ -83,11 +83,14 @@ MonoBehaviour:
   PreConditions:
   - KeyReference: {fileID: 11400000, guid: c8557a5c68d124743a1c008eb9c1d2ba, type: 2}
     Value: 1
+    Operator: 0
   - KeyReference: {fileID: 11400000, guid: 5f8edfffcfc2ff04a800548fc48896e5, type: 2}
     Value: 1
+    Operator: 0
   AfterEffects:
   - KeyReference: {fileID: 11400000, guid: 6634808530b4f09438451e762842b1de, type: 2}
     Value: 0
+    Operator: 0
   Agent: {fileID: 1561880132}
   FreeCubicle: {fileID: 11400000, guid: c8557a5c68d124743a1c008eb9c1d2ba, type: 2}
   HasPatient: {fileID: 11400000, guid: 5f8edfffcfc2ff04a800548fc48896e5, type: 2}
@@ -141,9 +144,11 @@ MonoBehaviour:
   PreConditions:
   - KeyReference: {fileID: 11400000, guid: 6634808530b4f09438451e762842b1de, type: 2}
     Value: 1
+    Operator: 0
   AfterEffects:
   - KeyReference: {fileID: 11400000, guid: 7f04aed51ded0f341b023eba0973dc01, type: 2}
     Value: 0
+    Operator: 0
   Agent: {fileID: 1561880132}
   Cubicle: {fileID: 0}
 --- !u!1 &474095811608573089
@@ -1821,10 +1826,12 @@ MonoBehaviour:
   Duration: 5
   PreConditions:
   - KeyReference: {fileID: 11400000, guid: 7b496e705374e3f43b8ee678c233affe, type: 2}
-    Value: 1
+    Value: 3
+    Operator: 3
   AfterEffects:
   - KeyReference: {fileID: 11400000, guid: 47d9cd7bf8c448844996f06596141239, type: 2}
     Value: 0
+    Operator: 0
   Agent: {fileID: 1561880132}
 --- !u!1 &7028101963732294443
 GameObject:

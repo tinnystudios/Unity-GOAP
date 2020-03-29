@@ -48,7 +48,33 @@ namespace GOAP
 
         public bool IsAchievableGiven(Dictionary<string, int> preConditions)
         {
-            return _preconditions.All(preCondition => preConditions.ContainsKey(preCondition.Key));
+            foreach (var agentPreCondition in PreConditions)
+            {
+                if (!preConditions.ContainsKey(agentPreCondition.Key))
+                    return false;
+
+                switch (agentPreCondition.Operator)
+                {
+                    case EOperator.Contains:
+                        // Handled by default
+                        break;
+
+                    case EOperator.LessThan:
+                        var value = preConditions[agentPreCondition.Key];
+                        if (agentPreCondition.Value < value)
+                            return false;
+
+                        break;
+
+                    case EOperator.GreaterThan:
+                        if (agentPreCondition.Value > preConditions[agentPreCondition.Key])
+                            return false;
+
+                        break;
+                }
+            }
+
+            return true;
         }
 
         public abstract bool PrePerform();

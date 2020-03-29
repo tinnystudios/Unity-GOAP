@@ -6,7 +6,17 @@ namespace GOAP
     public class WorldState
     {
         public StringReference KeyReference;
-        public string Key => KeyReference.Value;
         public int Value;
+
+        public EOperator Operator;
+        public string Key => KeyReference.Value;
+    }
+
+    public enum EOperator
+    {
+        Contains,
+        Equals,
+        LessThan,
+        GreaterThan
     }
 }

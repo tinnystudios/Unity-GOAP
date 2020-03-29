@@ -7,21 +7,21 @@ namespace GOAP
 {
     public class Agent : MonoBehaviour
     {
-        public List<Action> Actions = new List<Action>();
 
         public List<SubGoal> SubGoals;
         public Dictionary<SubGoal, int> Goals = new Dictionary<SubGoal, int>();
 
         public WorldStates States = new WorldStates();
 
-        // Planner
         public Action CurrentAction;
-        public SubGoal CurrentGoal;
 
         private Queue<Action> _actionQueue;
         private Planner _planner;
 
         public IInventory Inventory = new Inventory();
+
+        public SubGoal CurrentGoal { get; private set; }
+        public List<Action> Actions { get; private set; }
 
         public virtual void Start()
         {

@@ -11,10 +11,6 @@ namespace GOAP
     public abstract class Action : MonoBehaviour
     {
         public string Name = "Action";
-
-        public GameObject Target;
-
-        [Tooltip("How much does the agent dislike doing this action?")]
         public float Cost = 1.0f;
         public float Duration = 0;
 
@@ -22,11 +18,8 @@ namespace GOAP
         public WorldState[] AfterEffects;
         public WorldStates States;
 
-        private Dictionary<string, int> _preconditions = new Dictionary<string, int>();
-        private Dictionary<string, int> _afterEffects = new Dictionary<string, int>();
-
-        public Dictionary<string, int> PreconditionsMap => _preconditions;
-        public Dictionary<string, int> AfterEffectsMap => _afterEffects;
+        public Dictionary<string, int> PreconditionsMap { get; } = new Dictionary<string, int>();
+        public Dictionary<string, int> AfterEffectsMap { get; } = new Dictionary<string, int>();
 
         public IInventory Inventory { get; private set; }
 
@@ -35,10 +28,10 @@ namespace GOAP
         private void Awake()
         {
             foreach (var condition in PreConditions)
-                _preconditions.Add(condition.Key, condition.Value);
+                PreconditionsMap.Add(condition.Key, condition.Value);
 
             foreach (var condition in AfterEffects)
-                _afterEffects.Add(condition.Key, condition.Value);
+                AfterEffectsMap.Add(condition.Key, condition.Value);
 
             Inventory = GetComponentInParent<Agent>().Inventory;
             States = GetComponentInParent<Agent>().States;

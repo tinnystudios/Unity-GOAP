@@ -6,7 +6,9 @@ namespace GOAP
 {
     public class NavMeshAction : Action
     {
+        [Header("Nav mesh Agent")]
         public NavMeshAgent Agent;
+        public GameObject Target;
 
         public void OnValidate()
         {
